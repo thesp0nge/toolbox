@@ -22,7 +22,7 @@ if [ "$extension" = "nasm" ]; then
 	nasm -f elf32 -o $dirname/$filename.o $1
 
 	echo '[+] Linking ...'
-	ld -z execstack -N -o $dirname/$filename $dirname/$filename.o
+	ld -m elf_i386 -z execstack -N -o $dirname/$filename $dirname/$filename.o
 
 	echo '[+] Done!'
 fi
